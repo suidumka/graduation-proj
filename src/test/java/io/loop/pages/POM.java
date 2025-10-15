@@ -8,6 +8,14 @@ public class POM {
     private ReceivedDocsPage receivedDocsPage;
     private LeftNavigatePage leftNavigatePage;
     private MyUploadsPage myUploadsPage;
+    private DocuportLoginPage  docuportLoginPage;
+
+    public DocuportLoginPage getDocuportLoginPage() {
+        if(docuportLoginPage == null) {
+            docuportLoginPage = new DocuportLoginPage();
+        }
+        return docuportLoginPage;
+    }
 
     public MyUploadsPage getMyUploadsPage() {
         if (myUploadsPage == null){

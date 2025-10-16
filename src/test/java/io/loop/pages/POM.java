@@ -3,11 +3,27 @@ package io.loop.pages;
 public class POM {
 
     private LoginPage loginPage;
-    private ProductPage productPage;
     private HomePage homePage;
     private ReceivedDocsPage receivedDocsPage;
     private LeftNavigatePage leftNavigatePage;
     private MyUploadsPage myUploadsPage;
+    private DocuportLoginPage  docuportLoginPage;
+    private BaseDocuportPage baseDocuportPage;
+
+
+    public BaseDocuportPage getBaseDocuportPage() {
+        if (baseDocuportPage == null) {
+            baseDocuportPage = new BaseDocuportPage();
+        }
+        return baseDocuportPage;
+    }
+
+    public DocuportLoginPage getDocuportLoginPage() {
+        if(docuportLoginPage == null) {
+            docuportLoginPage = new DocuportLoginPage();
+        }
+        return docuportLoginPage;
+    }
 
     public MyUploadsPage getMyUploadsPage() {
         if (myUploadsPage == null){
@@ -36,13 +52,6 @@ public class POM {
             loginPage = new LoginPage();
         }
         return loginPage;
-    }
-
-    public ProductPage getProductPage() {
-        if (productPage == null) {
-            productPage = new ProductPage();
-        }
-        return productPage;
     }
 
     public HomePage getHomePage() {

@@ -29,14 +29,11 @@ public class LoginPage {
     @FindBy (xpath="//button[@class='text-none body-2 font-weight-medium v-btn v-btn--has-bg theme--light v-size--default success']")
     public WebElement continueButton;
 
-    @FindBy(xpath = "//a[@href='/reset-password']")
-    public WebElement forgotPasswordButton;
-
-    @FindBy(xpath = "//button[@aria-label='append icon']")
-    public WebElement showPasswordButton;
-
     @FindBy (xpath = "//*[text()=' Login ']")
     public WebElement loginTextBox;
+
+    @FindBy (xpath = "//img[@src='/img/logo.d7557277.svg']")
+    public WebElement docuportText;
 
     @FindBy (xpath = "//h3[.='Choose account']")
     public WebElement chooseAccountText;

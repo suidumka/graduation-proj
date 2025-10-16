@@ -1,6 +1,6 @@
 package io.db.pages;
 
-import io.db.util.ConfigurationReader;
+import io.loopcamp.util.ConfigurationReader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

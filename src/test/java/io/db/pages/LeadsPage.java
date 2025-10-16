@@ -1,6 +1,6 @@
 package io.db.pages;
 
-import io.db.util.Driver;
+import io.loopcamp.util.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 

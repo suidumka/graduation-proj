@@ -17,17 +17,19 @@ import static junit.framework.TestCase.assertTrue;
 public class LoginStepDefNew {
     POM pages = new POM();
 
-
     @Given("user is on Docuport login page")
     public void user_is_on_docuport_login_page() {
         Driver.getDriver().get(ConfigurationReader.getProperties("docuportBETA"));
     }
     @When("user enters username {string}")
-    public void user_enters_username(String username) {
+    public void user_enters_username(String username) throws InterruptedException {
+        BrowsersUtils.waitForClickable(pages.getDocuportLoginPage().loginButton, DocuportConstants.LARGE);
         pages.getDocuportLoginPage().usernameInput.sendKeys(username);
+
     }
     @When("user enters password {string}")
     public void user_enters_password(String password) {
+        BrowsersUtils.waitForClickable(pages.getDocuportLoginPage().passwordInput, DocuportConstants.LARGE);
         pages.getDocuportLoginPage().passwordInput.sendKeys(password);
     }
     @When("user clicks login button")
@@ -35,6 +37,7 @@ public class LoginStepDefNew {
         BrowsersUtils.waitForClickable(pages.getDocuportLoginPage().loginButton, DocuportConstants.LARGE);
         pages.getDocuportLoginPage().loginButton.click();
     }
+
     @Then("user should be able to see home page for {string}")
     public void user_should_be_able_to_see_home_page_for(String role) {
         String header = Driver.getDriver().getTitle();

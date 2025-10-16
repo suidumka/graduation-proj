@@ -30,7 +30,7 @@ public class LoginStepDefs {
 
     @When("user enters username {string}")
     public void user_enters_username_for_client(String username) {
-        BrowsersUtils.waitForClickable(pages.getLoginPage().loginButton, DocuportConstants.LARGE);
+        BrowsersUtils.waitForClickable(pages.getDocuportLoginPage().loginButton, DocuportConstants.LARGE);
         assertTrue("Not displayed", pages.getLoginPage().loginButton.isDisplayed());
         pages.getDocuportLoginPage().usernameInput.sendKeys(username);
     }
@@ -126,14 +126,13 @@ public class LoginStepDefs {
 
     @When("user enters credentials")
     public void user_enters_credentials(Map<String, String> credentials) throws InterruptedException {
-    */
-/*   for (Map.Entry<String, String> each :credentials.entrySet()){
+   for (Map.Entry<String, String> each :credentials.entrySet()){
            String key = each.getKey();
            String value = each.getValue();
 
            System.out.println("key: " + key);
            System.out.println("value: " + value);
-           System.out.println("...................................");*//*
+           System.out.println("...................................");
 
 
         pages.getLoginPage().loginDocuport(credentials.get("username"), credentials.get("password"));

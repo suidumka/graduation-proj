@@ -2,9 +2,9 @@ package io.db.steps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import io.loopcamp.pages.LoginPage;
-import io.loopcamp.pages.UserPage;
-import io.loopcamp.util.BrowserUtil;
+import io.db.pages.LoginPage;
+import io.db.pages.UserPage;
+import io.db.util.BrowserUtil;
 
 
 public class T2 {

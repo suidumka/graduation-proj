@@ -2,8 +2,8 @@ package io.db.steps;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.loopcamp.pages.LeadsPage;
-import io.loopcamp.util.DB_Utility;
+import io.db.pages.LeadsPage;
+import io.db.util.DB_Utility;
 
 import java.util.*;
 

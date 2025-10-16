@@ -3,7 +3,7 @@ Feature: Docuport Login Logout Feature
   Background:
     Given user is on Docuport login page
 
-  @dd
+  @docuport
   Scenario Outline: Login as <role>
     When user enters username "<username>"
     And user enters password "<password>"
@@ -16,3 +16,4 @@ Feature: Docuport Login Logout Feature
       | employee   | b1g1_employee@gmail.com   | Group1   |
       | advisor    | b1g1_advisor@gmail.com    | Group1   |
       | supervisor | b1g1_supervisor@gmail.com | Group1   |
+

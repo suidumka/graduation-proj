@@ -69,10 +69,10 @@ public class DocuportLoginPage {
         loginButton.click();
 
         if(role.toLowerCase().equals("client")){
-            Thread.sleep(3000);
+            Thread.sleep(2000);
             WebElement cont =Driver.getDriver().findElement(By.xpath("//button[@type='submit']"));
             cont.click();
-            Thread.sleep(3000);
+            Thread.sleep(2000);
         }
     }
 

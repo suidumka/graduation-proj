@@ -1,7 +1,7 @@
 package io.db.steps;
 
 import io.cucumber.java.en.Then;
-import io.db.util.DB_Utility;
+import io.loopcamp.util.DB_Utility;
 
 import static org.junit.Assert.assertEquals;
 

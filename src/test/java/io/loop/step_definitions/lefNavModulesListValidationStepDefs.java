@@ -21,7 +21,7 @@ import java.util.Map;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class H14_Task2_DocuportRolesDefs {
+public class lefNavModulesListValidationStepDefs {
 
     POM pages = new POM();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(DocuportConstants.LARGE));

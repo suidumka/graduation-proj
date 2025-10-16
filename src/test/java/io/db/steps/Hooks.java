@@ -3,9 +3,9 @@ package io.db.steps;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import io.loopcamp.util.ConfigurationReader;
-import io.loopcamp.util.DB_Utility;
-import io.loopcamp.util.Driver;
+import io.db.util.ConfigurationReader;
+import io.db.util.DB_Utility;
+import io.db.util.Driver;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 

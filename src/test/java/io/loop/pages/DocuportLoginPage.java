@@ -1,9 +1,11 @@
 package io.loop.pages;
 
+import io.loop.utilities.BrowsersUtils;
 import io.loop.utilities.ConfigurationReader;
 import io.loop.utilities.DocuportConstants;
 import io.loop.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -36,6 +38,30 @@ public class DocuportLoginPage {
     public WebElement logo;
 
 
+    public void clickButton(String button) throws InterruptedException {
+        switch (button.toLowerCase().trim()) {
+            case "login" -> BrowsersUtils.waitForClickable(loginButton, DocuportConstants.LARGE).click();
+            case "continue" -> {
+                try {
+                    BrowsersUtils.waitForClickable(continueButton, DocuportConstants.LARGE).click();
+                } catch (StaleElementReferenceException e) {
+                    //  Thread.sleep(5000);
+                    WebElement element = Driver.getDriver().findElement(By.xpath("//span[.=' Continue ']"));
+                    BrowsersUtils.waitForClickable(element, DocuportConstants.EXTRA_LARGE).click();
+                }
+            }
+            default -> throw new IllegalArgumentException("Not such a button: " + button);
+        }
+    }
+
+    public void insertField(String field, String input) {
+        switch(field.toLowerCase().trim()) {
+            case "username" -> BrowsersUtils.waitForVisibility(usernameInput, DocuportConstants.LARGE).sendKeys(input);
+            case "password" -> BrowsersUtils.waitForVisibility(passwordInput, DocuportConstants.LARGE).sendKeys(input);
+            default -> throw new IllegalArgumentException("Not such a button");
+        }
+    }
+
 
 //WebElement logo = driver.findElement(By.cssSelector("img[src='/img/logo.d7557277.svg']"));
 
@@ -47,18 +73,22 @@ public class DocuportLoginPage {
 
         switch (role.toLowerCase()){
             case "client"->{
+                Thread.sleep(1000);
                 username.sendKeys(DocuportConstants.USERNAME_CLIENT);
                 password.sendKeys(DocuportConstants.PASSWORD_FOR_LOGIN);
             }
             case "employee"->{
+                Thread.sleep(1000);
                 username.sendKeys(DocuportConstants.USERNAME_EMPLOYEE);
                 password.sendKeys(DocuportConstants.PASSWORD_FOR_LOGIN);
             }
             case "supervisor"->{
+                Thread.sleep(1000);
                 username.sendKeys(DocuportConstants.USERNAME_SUPERVISOR);
                 password.sendKeys(DocuportConstants.PASSWORD_FOR_LOGIN);
             }
             case "advisor"->{
+                Thread.sleep(1000);
                 username.sendKeys(DocuportConstants.USERNAME_ADVISOR);
                 password.sendKeys(DocuportConstants.PASSWORD_FOR_LOGIN);
             }
@@ -75,9 +105,5 @@ public class DocuportLoginPage {
             Thread.sleep(2000);
         }
     }
-
-
-
-
 
 }

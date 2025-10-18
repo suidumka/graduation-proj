@@ -81,8 +81,14 @@ public class LeftNavigatePage {
             case "my uploads" -> BrowsersUtils.waitForClickable(myUploads, DocuportConstants.EXTRA_LARGE).click();
 
             case "invitations" ->{
-                BrowsersUtils.waitForClickable(invitationsButton, DocuportConstants.LARGE).click();
-                BrowsersUtils.clickWithJS(invitationsButton);
+                try {
+                    BrowsersUtils.waitForClickable(invitationsButton, DocuportConstants.LARGE).click();
+                    BrowsersUtils.clickWithJS(invitationsButton);
+                }
+                catch (StaleElementReferenceException se){
+                    BrowsersUtils.waitForClickable(invitationsButton, DocuportConstants.LARGE).click();
+                    BrowsersUtils.clickWithJS(invitationsButton);
+                }
             }
 
 

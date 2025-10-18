@@ -23,11 +23,5 @@ public class DocuportRowsPerPage {
     @FindBy (xpath = "//div[@class='v-list-item__title' and text()='5']")
     public WebElement clickNumber5;
 
-    public int getDefaultRowsPerPageValue() {
-        String value = pageSize.getAttribute("value");
-        return Integer.parseInt(value);
-    }
-
-
 
 }

@@ -35,7 +35,8 @@ public class SampleDocuportStepDefs {
     public void user_clicks_button_on_page(String button, String page) throws InterruptedException {
         switch (page.trim().toLowerCase()) {
 
-            case "login" , "choose account" -> { pages.getLoginPage().clickButton(button);
+            case "login" , "choose account" -> {
+                pages.getLoginPage().clickButton(button);
                 LOG.info(button + " was successfully clicked");
                 // Thread.sleep(1000);
             }
@@ -68,6 +69,10 @@ public class SampleDocuportStepDefs {
                 LOG.info(button + " was successfully clicked");
             }
             case "home" ->{
+                pages.getLeftNavigatePage().clickButton(button);
+                LOG.info(button + " was successfully clicked");
+            }
+            case "invitations" ->{
                 pages.getLeftNavigatePage().clickButton(button);
                 LOG.info(button + " was successfully clicked");
             }

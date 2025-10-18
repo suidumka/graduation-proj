@@ -37,9 +37,31 @@ public class LeftNavigatePage {
     public WebElement termsAndConditionsButton;
 
 
+    @FindBy (xpath = "//span[contains(text(),'Leads')]")
+    public WebElement leadsModule;
+
+    @FindBy (xpath = "//span[contains(text(),'Users')]")
+    public WebElement usersModule;
+
+
 
     public void clickButton(String button) {
         switch (button.toLowerCase().trim()) {
+
+            case "leads" -> {
+                try{
+                BrowsersUtils.waitForClickable(leadsModule, DocuportConstants.LARGE).click();
+            }catch (StaleElementReferenceException se){
+                    BrowsersUtils.waitForClickable(leadsModule, DocuportConstants.LARGE);
+                    BrowsersUtils.clickWithJS(leadsModule);
+                }
+            }
+
+            case "users" ->{
+                BrowsersUtils.waitForClickable(usersModule, DocuportConstants.LARGE);
+                BrowsersUtils.clickWithJS(usersModule);
+            }
+
             case "upload" -> BrowsersUtils.waitForClickable(uploadButton, DocuportConstants.LARGE).click();
          /*   case "home" -> {
                 try {
@@ -62,6 +84,7 @@ public class LeftNavigatePage {
                 BrowsersUtils.waitForClickable(invitationsButton, DocuportConstants.LARGE).click();
                 BrowsersUtils.clickWithJS(invitationsButton);
             }
+
 
             case "terms and conditions" -> BrowsersUtils.waitForClickable(termsAndConditionsButton, DocuportConstants.LARGE).click();
 

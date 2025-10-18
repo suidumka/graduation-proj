@@ -9,6 +9,14 @@ public class POM {
     private MyUploadsPage myUploadsPage;
     private DocuportLoginPage  docuportLoginPage;
     private BaseDocuportPage baseDocuportPage;
+    private DocuportRowsPerPage docuportRowsPerPage;
+
+    public DocuportRowsPerPage getDocuportRowsPerPage() {
+        if(docuportRowsPerPage == null) {
+            docuportRowsPerPage = new DocuportRowsPerPage();
+        }
+        return docuportRowsPerPage;
+    }
 
 
     public BaseDocuportPage getBaseDocuportPage() {

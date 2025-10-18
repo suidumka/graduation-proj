@@ -34,10 +34,22 @@ public class SampleDocuportStepDefs {
     @When("user clicks {string} button on {string} page")
     public void user_clicks_button_on_page(String button, String page) throws InterruptedException {
         switch (page.trim().toLowerCase()) {
+
             case "login" , "choose account" -> { pages.getLoginPage().clickButton(button);
-            LOG.info(button + " was successfully clicked");
-           // Thread.sleep(1000);
+                LOG.info(button + " was successfully clicked");
+                // Thread.sleep(1000);
             }
+
+            case "leads" ->{
+                pages.getLeftNavigatePage().clickButton(button);
+                LOG.info(button + " was successfully clicked");
+            }
+
+            case "users"->{
+                pages.getLeftNavigatePage().clickButton(button);
+                LOG.info(button + " was successfully clicked");
+            }
+
             case "left navigate" -> {
                 pages.getLeftNavigatePage().clickButton(button);
                 LOG.info(button + " was successfully clicked");

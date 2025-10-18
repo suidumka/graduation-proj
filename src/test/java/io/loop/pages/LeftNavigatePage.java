@@ -52,7 +52,7 @@ public class LeftNavigatePage {
                 try{
                 BrowsersUtils.waitForClickable(leadsModule, DocuportConstants.LARGE).click();
             }catch (StaleElementReferenceException se){
-                    BrowsersUtils.waitForClickable(leadsModule, DocuportConstants.LARGE);
+                    BrowsersUtils.waitForVisibility(leadsModule, DocuportConstants.LARGE);
                     BrowsersUtils.clickWithJS(leadsModule);
                 }
             }

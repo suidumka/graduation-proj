@@ -20,7 +20,3 @@ Feature: Docuport Sample Scenario
     # so, we just need to provide a pathname of file we need to upload and it's fine
     And user clicks "Upload file" button on "My uploads" page
     And user uploads a document
-
-    Examples:
-      | role   |
-      | client |

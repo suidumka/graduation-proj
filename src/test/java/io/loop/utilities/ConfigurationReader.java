@@ -1,4 +1,4 @@
-package io.loop.utilities;
+package com.company.utilities;
 
 
 import java.io.FileInputStream;
@@ -20,7 +20,6 @@ public class ConfigurationReader {
     }
 
     public static String getProperties(String keyName) {
-
         return properties.getProperty(keyName);
     }
 }

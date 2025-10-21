@@ -99,7 +99,7 @@ public class Driver {
             //assert driverPool != null;
             driverPool.get().manage().window().maximize();
             // driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(DocuportConstants.LARGE));
-            driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.valueOf(com.company.utilities.ConfigurationReader.getProperties("timeouts"))));
+            driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.valueOf(io.loop.utilities.ConfigurationReader.getProperties("timeouts"))));
         }
         return driverPool.get();
     }

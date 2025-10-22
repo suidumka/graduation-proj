@@ -60,8 +60,6 @@ public class Driver {
         prefs.put("autofill.profile_enabled", false);
         prefs.put("autofill.credit_card_enabled", false);
 
-        String browserType = ConfigurationReader.getProperties("browser");
-
         ChromeOptions options = new ChromeOptions();
 
         options.setExperimentalOption("prefs", prefs);
@@ -70,7 +68,18 @@ public class Driver {
         );
         options.addArguments("--disable-features=HttpsFirstMode,HttpsFirstModeV2");
         if (driverPool.get() == null) {
-            switch (browserType.toLowerCase()) {
+
+            // Read from -Dbrowser, then BROWSER env, else default to chrome
+            String browserType = System.getProperty("browser");
+            if (browserType == null || browserType.isBlank()) {
+                browserType = System.getenv("BROWSER");
+            }
+            if (browserType == null || browserType.isBlank()) {
+                browserType = "chrome";
+            }
+            browserType = browserType.trim().toLowerCase();
+
+            switch (browserType) {
                 case "chrome" -> {
                     options.addArguments("--disable-blink-features=AutomationControlled");
                     driverPool.set(new ChromeDriver(options));
@@ -79,14 +88,18 @@ public class Driver {
                 case "safari" -> driverPool.set(new SafariDriver());
                 case "headless" -> {
                     options.addArguments("--disable-blink-features=AutomationControlled");
-                    options.addArguments("--headless");
+                    options.addArguments("--headless"); // kept exactly as you had it
+                    driverPool.set(new ChromeDriver(options));
+                }
+                default -> { // unknown value -> default to chrome
+                    options.addArguments("--disable-blink-features=AutomationControlled");
                     driverPool.set(new ChromeDriver(options));
                 }
             }
             //assert driverPool != null;
             driverPool.get().manage().window().maximize();
-           // driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(DocuportConstants.LARGE));
-            driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.valueOf(ConfigurationReader.getProperties("timeouts"))));
+            // driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(DocuportConstants.LARGE));
+            driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.valueOf(io.loop.utilities.ConfigurationReader.getProperties("timeouts"))));
         }
         return driverPool.get();
     }

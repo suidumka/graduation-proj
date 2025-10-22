@@ -1,14 +1,10 @@
-package io.loop.step_definitions;
+package io.loop.step_definitions_ui;
 
 import io.cucumber.java.en.*;
 import io.loop.pages.POM;
-import io.loop.utilities.*;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-
-import java.awt.*;
 
 public class SampleDocuportStepDefs {
 

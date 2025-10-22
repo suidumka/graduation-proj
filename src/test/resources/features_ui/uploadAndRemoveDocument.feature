@@ -3,7 +3,7 @@ Feature: Docuport Document Upload And Remove
   Background:
     Given user is on Docuport login page
 
-  @docuportUpload
+  @docuportUpload @ui
   Scenario: User upload and remove document successfully
     When user enters valid "b1g1_advisor@gmail.com" to "username" on "Login" page
     And user enters valid "Group1" to "password" on "Login" page

@@ -1,10 +1,9 @@
-package io.loop.step_definitions;
+package io.loop.step_definitions_ui;
 
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.loop.pages.DocuportLoginPage;
 import io.loop.pages.POM;
 import io.loop.utilities.BrowsersUtils;
 import io.loop.utilities.ConfigurationReader;

@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         plugin = {"html:target/html-reports/cucumber-report.html",
                 "json:target/json-reports/json-report.json"},
         features = "@target/rerun.txt",
-        glue = "io/loop/step_definitions",
+        glue = "io/loop/step_definitions_ui",
         monochrome = true,
         publish = false
 )

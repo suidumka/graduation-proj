@@ -1,4 +1,4 @@
-package io.loop.step_definitions;
+package io.loop.step_definitions_ui;
 
 import io.cucumber.java.en.*;
 import io.loop.pages.POM;
@@ -16,8 +16,6 @@ public class docuportRowsPerPageStepDefs {
     @Then("user should see {string} default value as {int}")
     public void user_should_see_default_value_as(String pagination, int count) {
 
-//        String actualPaginationText = pagination + ":\n10";
-//        assertEquals(actualPaginationText, pages.getDocuportRowsPerPage().rowsPerPageText.getText());
         String actualPaginationLabel = pages.getDocuportRowsPerPage().rowsPerPageText.getText().trim();
         assertTrue(actualPaginationLabel.contains(pagination));
 
@@ -43,8 +41,6 @@ public class docuportRowsPerPageStepDefs {
     @Then("user should see {string} value updated to {int}")
     public void user_should_see_value_updated_to(String pagination, Integer count) {
 
-//        String actualPaginationText = pagination + ":\n5";
-//        assertEquals(actualPaginationText, pages.getDocuportRowsPerPage().rowsPerPageText.getText());
         String actualPaginationLabel = pages.getDocuportRowsPerPage().rowsPerPageText.getText().trim();
         assertTrue(actualPaginationLabel.contains(pagination));
 

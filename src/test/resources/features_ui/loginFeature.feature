@@ -3,7 +3,7 @@ Feature: Docuport Login Logout Feature
   Background:
     Given user is on Docuport login page
 
-  @docuport
+  @docuport @ui
   Scenario Outline: Login as <role>
     When user enters username "<username>"
     And user enters password "<password>"

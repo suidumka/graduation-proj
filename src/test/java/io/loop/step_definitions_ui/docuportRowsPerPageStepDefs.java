@@ -1,4 +1,4 @@
-package io.loop.step_definitions;
+package io.loop.step_definitions_ui;
 
 import io.cucumber.java.en.*;
 import io.loop.pages.POM;

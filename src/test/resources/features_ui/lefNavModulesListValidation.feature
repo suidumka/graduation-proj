@@ -3,7 +3,7 @@ Feature: Docuport: login and verify left navigation per role
   Background:
     Given the Docuport site is open
 
-  @dd
+  @dd @ui
   #mapListProduct
   Scenario Outline: Login and verify left navigation for <role>
     When the user logs in as "<role>"

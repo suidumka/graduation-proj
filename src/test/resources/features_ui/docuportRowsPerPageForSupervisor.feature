@@ -7,7 +7,7 @@ Feature: Rows Per Page Functionality
     And user clicks login button
     Then user should be able to see home page for "supervisor"
 
-  @rowsPerPage
+  @rowsPerPage @ui
   Scenario: Validate and change Rows Per Page on Leads and Users pages
     When user clicks "Leads" button on "Left navigate" page
     Then user should see "Rows per page" default value as 10

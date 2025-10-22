@@ -1,6 +1,6 @@
 Feature: Docuport Sample Scenario
 
-  @sampleDocuport
+  @sampleDocuport @ui
   Scenario: Practice click buttons on different pages as a client
     Given user is on Docuport login page
     When user inserts "b1g1_client@gmail.com" to "username" field on "Login" page

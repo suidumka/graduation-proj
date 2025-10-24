@@ -13,16 +13,16 @@ import org.junit.runner.RunWith;
         },
         features = {
                 "src/test/resources/features_ui",
-                "src/test/resources/features_api",
+                //"src/test/resources/features_api",
                 "src/test/resources/features_db"
         },
         glue = {
                 "io/loop/step_definitions_ui",
-                "io/loop/step_definitions_api",
+               // "io/loop/step_definitions_api",
                 "io/loop/step_definitions_db"
         },
         dryRun = false,
-        tags = "@T3",
+        tags = "@docuportUpload",
         monochrome = true
        // publish = true //creates a report - which is valid for 24h
 

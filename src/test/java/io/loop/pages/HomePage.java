@@ -105,7 +105,7 @@ public class HomePage {
     @FindBy(xpath = "//span[.='Document(s) have been uploaded successfully']")
     public WebElement uploadSuccessfully;
 
-    @FindBy(xpath = "//span[.='test.txt']//..//..//div[@class='v-data-table__checkbox v-simple-checkbox']")
+    @FindBy(xpath = "//span[.='Text']/../..//div/div/div")
     public WebElement checkbox;
 
     @FindBy(xpath = "//span[.='Delete']//..//..//button[@class='mr-3 mb-1 mb-sm-0 v-btn v-btn--has-bg theme--light v-size--large error']")

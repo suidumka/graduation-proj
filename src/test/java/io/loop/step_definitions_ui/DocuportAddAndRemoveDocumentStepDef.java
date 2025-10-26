@@ -81,7 +81,7 @@ public class DocuportAddAndRemoveDocumentStepDef {
     @When("user upload an document")
     public void user_upload_an_document() throws Exception {
         WebElement element = Driver.getDriver().findElement(By.xpath("//input[@type='file']"));
-        element.sendKeys("/Users/suidum/Desktop/bootcamp/test.txt");
+        element.sendKeys("src/test/Text");
        
 
         Thread.sleep(2000);

@@ -82,7 +82,7 @@ public class DocuportAddAndRemoveDocumentStepDef {
     public void user_upload_an_document() throws Exception {
         WebElement element = Driver.getDriver().findElement(By.xpath("//input[@type='file']"));
         element.sendKeys("/Users/suidum/Desktop/bootcamp/test.txt");
-
+       
 
         Thread.sleep(2000);
         pages.getHomePage().clientsLabel.click();
@@ -104,7 +104,7 @@ public class DocuportAddAndRemoveDocumentStepDef {
 
     @Then("user choose document")
     public void user_choose_document() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         pages.getHomePage().checkbox.click();
     }
 

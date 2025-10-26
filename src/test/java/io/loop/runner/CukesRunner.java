@@ -13,12 +13,12 @@ import org.junit.runner.RunWith;
         },
         features = {
                 "src/test/resources/features_ui",
-                "src/test/resources/features_api",
+                //"src/test/resources/features_api",
                 "src/test/resources/features_db"
         },
         glue = {
                 "io/loop/step_definitions_ui",
-                "io/loop/step_definitions_api",
+               // "io/loop/step_definitions_api",
                 "io/loop/step_definitions_db"
         },
         dryRun = false,

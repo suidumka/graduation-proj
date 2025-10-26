@@ -4,8 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.net.URL;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -15,20 +18,14 @@ import java.util.logging.Logger;
 
 public class Driver {
 
-    /*
-    Creating a private constructor, so we are closing access to the object of this class from outside the class
-     */
+    static String browserType;
+    private Driver() {}
 
-    private Driver() {
-    }
+    private static WebDriver driver;
+    private static ChromeOptions chromeOptions;
 
-    /*
-    Making our driver instance private, so it is not reachable from outside the class
-    We make it static because we want it to run before everything else, and we will use it in a static method
-     */
 
-    //private static WebDriver driver;
-    // implement threadLocal to archive multi thread locally
+
     private static InheritableThreadLocal <WebDriver> driverPool = new InheritableThreadLocal<>();
 
     static {
@@ -41,16 +38,6 @@ public class Driver {
         Logger.getLogger("org.openqa.selenium.devtools.CdpVersionFinder").setLevel(Level.SEVERE);
     }
 
-
-    /*
-    Creating a reusable method that will return the same driver instance every time when we call it
-     */
-
-    /**
-     * Singleton pattern
-     *
-     * @return
-     */
 
     public static WebDriver getDriver() {
         Map<String, Object> prefs = new HashMap<>();
@@ -69,15 +56,15 @@ public class Driver {
         options.addArguments("--disable-features=HttpsFirstMode,HttpsFirstModeV2");
         if (driverPool.get() == null) {
 
-            // Read from -Dbrowser, then BROWSER env, else default to chrome
-            String browserType = System.getProperty("browser");
+            browserType = System.getProperty("browser");
             if (browserType == null || browserType.isBlank()) {
                 browserType = System.getenv("BROWSER");
             }
             if (browserType == null || browserType.isBlank()) {
-                browserType = "chrome";
+                browserType =  ConfigurationReader.getProperties("browser");
             }
             browserType = browserType.trim().toLowerCase();
+            System.out.println("Browser: " + browserType);
 
             switch (browserType) {
                 case "chrome" -> {
@@ -90,6 +77,22 @@ public class Driver {
                     options.addArguments("--disable-blink-features=AutomationControlled");
                     options.addArguments("--headless"); // kept exactly as you had it
                     driverPool.set(new ChromeDriver(options));
+                }
+                case "remote-chrome-linux" -> {
+                    try {
+                        // assign your grid server address
+                        String gridAddress = "18.234.251.252";
+                        URL url = new URL("http://" + gridAddress + ":4444/wd/hub");
+                        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+                        chromeOptions = new ChromeOptions();
+                        chromeOptions.addArguments("--headless");
+                        chromeOptions.addArguments("--no-sandbox");
+                        chromeOptions.addArguments("--disable-dev-shm-usage");
+                        desiredCapabilities.merge(chromeOptions);
+                        driver = new RemoteWebDriver(url, desiredCapabilities);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
                 default -> { // unknown value -> default to chrome
                     options.addArguments("--disable-blink-features=AutomationControlled");

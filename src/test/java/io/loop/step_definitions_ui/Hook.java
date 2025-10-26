@@ -62,16 +62,4 @@ public class Hook {
         scenario.attach(screenshot, "image/png", scenario.getName());
     }
 
-
-
-
-    @Before("@docuportDb")
-    public void setupDB() {
-
-    }
-
-    @After ("@docuportDb")
-    public void  closeConnection () {
-
-    }
 }

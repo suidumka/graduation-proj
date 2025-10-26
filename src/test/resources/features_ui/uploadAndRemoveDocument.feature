@@ -1,3 +1,4 @@
+@smoke
 Feature: Docuport Document Upload And Remove
 
   Background:

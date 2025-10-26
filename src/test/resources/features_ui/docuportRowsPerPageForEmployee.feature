@@ -1,3 +1,4 @@
+@smoke
 Feature: Rows Per Page Functionality
 
   Background:

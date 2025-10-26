@@ -1,3 +1,4 @@
+@smoke
 Feature: Docuport: login and verify left navigation per role
 
   Background:

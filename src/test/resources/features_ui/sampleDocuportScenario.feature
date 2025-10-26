@@ -1,3 +1,4 @@
+@smoke
 Feature: Docuport Sample Scenario
 
   @sampleDocuport @ui

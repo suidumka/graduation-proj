@@ -1,3 +1,4 @@
+@smoke
 Feature: Docuport Login Logout Feature
 
   Background:

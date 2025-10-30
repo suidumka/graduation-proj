@@ -84,6 +84,7 @@ public class DB_Utility {
             if( rs!=null)  rs.close();
             if( stm!=null)  stm.close();
             if( con!=null)  con.close();
+            System.out.println("CONNECTION CLOSED");
         } catch (Exception e) {
             System.out.println("ERROR OCCURRED WHILE CLOSING RESOURCES " + e.getMessage() );
         }

@@ -2,18 +2,10 @@ package io.loop.pages;
 
 import io.loop.utilities.BrowsersUtils;
 import io.loop.utilities.DocuportConstants;
-import io.loop.utilities.Driver;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class MyUploadsPage {
-
-    public MyUploadsPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
-
+public class MyUploadsPage extends Base {
 
     @FindBy(xpath = "//span[@class='subtitle-2 text-none' and normalize-space(.)='Upload documents']")
     public WebElement uploadDocumentsButton;

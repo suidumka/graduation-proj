@@ -2,21 +2,13 @@ package io.loop.pages;
 
 import io.loop.utilities.BrowsersUtils;
 import io.loop.utilities.DocuportConstants;
-import io.loop.utilities.Driver;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
+public class LeftNavigatePage extends Base {
 
-public class LeftNavigatePage {
 
-    public LeftNavigatePage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
 
     @FindBy(xpath = "//span[contains(text(),'Upload')]")
     public WebElement uploadButton;

@@ -8,13 +8,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class DocuportLoginPage {
+public class DocuportLoginPage extends Base {
 
-    public DocuportLoginPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
+
 
     @FindBy(xpath = "//input[@type='text']")
     public WebElement usernameInput;

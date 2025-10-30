@@ -2,16 +2,12 @@ package io.loop.pages;
 
 import io.loop.utilities.BrowsersUtils;
 import io.loop.utilities.DocuportConstants;
-import io.loop.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class ReceivedDocsPage {
+public class ReceivedDocsPage extends Base {
 
-    public ReceivedDocsPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
+
 
     @FindBy(xpath = "//span[@class='subtitle-2 text-none' and .='Search']")
     public WebElement searchButton;

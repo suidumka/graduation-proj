@@ -4,17 +4,22 @@ package io.loop.pages;
 
 import io.loop.utilities.BrowsersUtils;
 import io.loop.utilities.DocuportConstants;
-import io.loop.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class HomePage {
-    public HomePage(){
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
+public class HomePage extends Base {
+
+
+    @FindBy(xpath = "//button[@role='button']")
+    public WebElement selfButton;
+
+    @FindBy (xpath = "//div[@class='d-flex align-center']/span")
+    public WebElement batchNumGroupNumText;
+
+    @FindBy(linkText = "Profile")
+    public WebElement profileLink;
 
     @FindBy (xpath="//img[@alt='Docuport']")
     public WebElement logo;

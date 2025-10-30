@@ -21,7 +21,7 @@ public class DocuportApiTestBase {
 
     @BeforeAll
     public static void setUp () {
-        baseURI = ConfigurationReader.getProperties("docuport.base.url");
+        baseURI = ConfigurationReader.getProperties("docuportBETA");
 
         reqSpec = given().accept(ContentType.JSON)
                 .and().header("Authorization", getAccessToken("employee"));
@@ -62,7 +62,9 @@ public class DocuportApiTestBase {
         reqBodyMap.put("usernameOrEmailAddress", userTypeStr);
         reqBodyMap.put("password", userTypePassword);
 
-        Response response = given().accept(ContentType.JSON)
+        Response response = given()
+                .baseUri(baseURI)
+                .accept(ContentType.JSON)
                 .and().contentType(ContentType.JSON)
                 .and().body(reqBodyMap)
                 //.and().log().all()

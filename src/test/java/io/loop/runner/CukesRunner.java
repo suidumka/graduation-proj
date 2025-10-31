@@ -8,8 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"html:target/html-reports/cucumber-report.html",
                 "json:target/json-reports/json-report.json",
-                "rerun:target/rerun.txt",
-               // "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+                "rerun:target/rerun.txt"
         },
         features = {
                 "src/test/resources/features_ui",
@@ -24,7 +23,6 @@ import org.junit.runner.RunWith;
         dryRun = false,
         tags = "@getClient",
         monochrome = true
-       // publish = true //creates a report - which is valid for 24h
 
 )
 

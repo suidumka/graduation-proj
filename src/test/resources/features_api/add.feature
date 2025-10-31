@@ -1,4 +1,4 @@
-@getClients
+@smoke
 Feature: Advisor API Client Management
 
   Background:

@@ -1,6 +1,5 @@
 package io.loop.utilities;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -93,13 +92,12 @@ public class Driver {
                     options.addArguments("--headless"); // kept exactly as you had it
                     driverPool.set(new ChromeDriver(options));
                 }
-                case "chrome-linux"->{
-                    WebDriverManager.chromedriver().setup();
-                    chromeOptions = new ChromeOptions();
+                case "chrome-linux" -> {
+                    ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments("--headless");
                     chromeOptions.addArguments("--no-sandbox");
                     chromeOptions.addArguments("--disable-dev-shm-usage");
-                    driverPool.set( new ChromeDriver(chromeOptions) );
+                    driverPool.set(new ChromeDriver(chromeOptions));
                 }
                 default -> { // unknown value -> default to chrome
                     options.addArguments("--disable-blink-features=AutomationControlled");

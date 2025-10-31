@@ -91,6 +91,14 @@ public class Driver {
                     options.addArguments("--headless"); // kept exactly as you had it
                     driverPool.set(new ChromeDriver(options));
                 }
+                case "chrome-linux":
+                    WebDriverManager.chromedriver().setup();
+                    chromeOptions = new ChromeOptions();
+                    chromeOptions.addArguments("--headless");
+                    chromeOptions.addArguments("--no-sandbox");
+                    chromeOptions.addArguments("--disable-dev-shm-usage");
+                    driver = new ChromeDriver(chromeOptions);
+                    break;
                 default -> { // unknown value -> default to chrome
                     options.addArguments("--disable-blink-features=AutomationControlled");
                     driverPool.set(new ChromeDriver(options));

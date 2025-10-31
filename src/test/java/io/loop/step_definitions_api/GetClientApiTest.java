@@ -16,7 +16,6 @@ import static org.hamcrest.MatcherAssert.*;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 public class GetClientApiTest {
 

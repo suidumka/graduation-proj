@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 
-public class docuportRowsPerPageStepDefs {
+public class DocuportRowsPerPageStepDefs {
     POM pages = new POM();
     private static final Logger LOG = LogManager.getLogger();
 

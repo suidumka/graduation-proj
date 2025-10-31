@@ -4,8 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.net.URL;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -15,21 +18,10 @@ import java.util.logging.Logger;
 
 public class Driver {
 
-    /*
-    Creating a private constructor, so we are closing access to the object of this class from outside the class
-     */
-    private static ChromeOptions chromeOptions;
+    static String browserType;
+    private Driver() {}
+   
 
-    private Driver() {
-    }
-
-    /*
-    Making our driver instance private, so it is not reachable from outside the class
-    We make it static because we want it to run before everything else, and we will use it in a static method
-     */
-
-    //private static WebDriver driver;
-    // implement threadLocal to archive multi thread locally
     private static InheritableThreadLocal <WebDriver> driverPool = new InheritableThreadLocal<>();
 
     static {
@@ -42,16 +34,6 @@ public class Driver {
         Logger.getLogger("org.openqa.selenium.devtools.CdpVersionFinder").setLevel(Level.SEVERE);
     }
 
-
-    /*
-    Creating a reusable method that will return the same driver instance every time when we call it
-     */
-
-    /**
-     * Singleton pattern
-     *
-     * @return
-     */
 
     public static WebDriver getDriver() {
         Map<String, Object> prefs = new HashMap<>();
@@ -70,15 +52,15 @@ public class Driver {
         options.addArguments("--disable-features=HttpsFirstMode,HttpsFirstModeV2");
         if (driverPool.get() == null) {
 
-            // Read from -Dbrowser, then BROWSER env, else default to chrome
-            String browserType = System.getProperty("browser");
+            browserType = System.getProperty("browser");
             if (browserType == null || browserType.isBlank()) {
                 browserType = System.getenv("BROWSER");
             }
             if (browserType == null || browserType.isBlank()) {
-                browserType = "chrome";
+                browserType =  ConfigurationReader.getProperties("browser");
             }
             browserType = browserType.trim().toLowerCase();
+            System.out.println("Browser: " + browserType);
 
             switch (browserType) {
                 case "chrome" -> {

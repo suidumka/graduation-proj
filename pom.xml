@@ -60,6 +60,12 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.9.2</version> <!-- or latest -->
+        </dependency>
+
         <!-- Cucumber dependencies -->
 
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->

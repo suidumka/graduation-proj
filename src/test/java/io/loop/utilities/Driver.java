@@ -20,11 +20,7 @@ public class Driver {
 
     static String browserType;
     private Driver() {}
-
-    private static WebDriver driver;
-    private static ChromeOptions chromeOptions;
-
-
+   
 
     private static InheritableThreadLocal <WebDriver> driverPool = new InheritableThreadLocal<>();
 
@@ -78,21 +74,12 @@ public class Driver {
                     options.addArguments("--headless"); // kept exactly as you had it
                     driverPool.set(new ChromeDriver(options));
                 }
-                case "remote-chrome-linux" -> {
-                    try {
-                        // assign your grid server address
-                        String gridAddress = "18.234.251.252";
-                        URL url = new URL("http://" + gridAddress + ":4444/wd/hub");
-                        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-                        chromeOptions = new ChromeOptions();
-                        chromeOptions.addArguments("--headless");
-                        chromeOptions.addArguments("--no-sandbox");
-                        chromeOptions.addArguments("--disable-dev-shm-usage");
-                        desiredCapabilities.merge(chromeOptions);
-                        driver = new RemoteWebDriver(url, desiredCapabilities);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                case "chrome-linux" -> {
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.addArguments("--headless");
+                    chromeOptions.addArguments("--no-sandbox");
+                    chromeOptions.addArguments("--disable-dev-shm-usage");
+                    driverPool.set(new ChromeDriver(chromeOptions));
                 }
                 default -> { // unknown value -> default to chrome
                     options.addArguments("--disable-blink-features=AutomationControlled");

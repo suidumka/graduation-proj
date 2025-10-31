@@ -22,7 +22,7 @@ import org.junit.runner.RunWith;
                 "io/loop/step_definitions_db"
         },
         dryRun = false,
-        tags = "@getClients",
+        tags = "@getClient",
         monochrome = true
        // publish = true //creates a report - which is valid for 24h
 

@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         plugin = {
                 "pretty",
                 "html:target/html-reports/cucumber-html-reports.html",
-                "json:target/json-reports/all-reports.json",
+                "json:target/json-reports/cucumber.json",
                 "rerun:target/rerun.txt",
                 // "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
@@ -34,11 +34,7 @@ import org.junit.runner.RunWith;
                 "json:target/json-reports/cucumber.json",
                 "rerun:target/rerun.txt"
         },
-        features = {
-                "src/test/resources/features_ui",
-                "src/test/resources/features_api",
-                "src/test/resources/features_db"
-        },
+        features =  "src/test/resources/features",
         glue = {
                 "io/loop/step_definitions_ui",
                 "io/loop/step_definitions_api",

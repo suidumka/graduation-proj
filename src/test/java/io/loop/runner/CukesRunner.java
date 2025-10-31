@@ -6,6 +6,28 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+        features = "classpath:features",
+        glue = "io.loop",
+        plugin = {
+                "pretty",
+                "html:target/html-reports/all-report.html",
+                "json:target/json-reports/all-report.json",
+                "rerun:target/rerun.txt",
+                // "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+        },
+        monochrome = true,
+        publish = false
+)
+public class CukesRunner {
+}
+
+/*
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
         plugin = {
                 "pretty",
                 "html:target/html-reports/cucumber-report.html",
@@ -32,6 +54,7 @@ public class CukesRunner {
 }
 
 
+*/
 /*
 1. Exclude a single tag:
 tags = "@ui and not @ignore"

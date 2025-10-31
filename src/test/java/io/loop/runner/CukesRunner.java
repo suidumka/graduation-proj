@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
         glue = "io.loop",
         plugin = {
                 "pretty",
-                "html:target/html-reports/all-report.html",
-                "json:target/json-reports/cucumber.json",
+                "html:target/html-reports/cucumber-html-reports.html",
+                "json:target/json-reports/all-reports.json",
                 "rerun:target/rerun.txt",
                 // "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },

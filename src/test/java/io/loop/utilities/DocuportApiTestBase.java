@@ -5,7 +5,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.apache.http.HttpStatus;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.BeforeClass;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +19,7 @@ public class DocuportApiTestBase {
 
     protected static ResponseSpecification resSpec;
 
-    @BeforeAll
+    @BeforeClass
     public static void setUp () {
         baseURI = ConfigurationReader.getProperties("docuportBETA");
 

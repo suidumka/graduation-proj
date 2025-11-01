@@ -1,4 +1,4 @@
-@getClient
+@smoke
 Feature: Add new client API and DB validation
 
   @db

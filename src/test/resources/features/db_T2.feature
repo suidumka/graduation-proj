@@ -1,4 +1,4 @@
-@T2
+@smoke
 Feature: As a data consumer, I want UI user account to be in DB.
   @uiDB
   Scenario: verify UI user total account count matches in DB

@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 public class T1 {
     @Given("Establish the database connection")
     public void establish_the_database_connection() {
-       // DB_Utility.docuportCreateConnection();
+        // DB_Utility.docuportCreateConnection();
         System.out.println("Establish the database connection");
     }
 
@@ -28,7 +28,7 @@ public class T1 {
 
     @Then("verify the below columns are listed in result for")
     public void verify_the_below_columns_are_listed_in_result_for(List<String> expectedDepNames) {
-       List<String> actualDepNames = DB_Utility.getColumnDataAsList("name");
+        List<String> actualDepNames = DB_Utility.getColumnDataAsList("name");
         System.out.println("actualDepNames = " + actualDepNames);
         System.out.println("expectedDepNames = " + expectedDepNames);
 

@@ -84,7 +84,6 @@ public class DocuportAddAndRemoveDocumentStepDef {
         element.sendKeys("https://github.com/suidumka/graduation-proj/blob/630304a4c5e56e657850fdf56f17b286127d2693/src/test/resources/Text");
 
 
-
         Thread.sleep(2000);
         pages.getHomePage().clientsLabel.click();
         pages.getHomePage().client3T.click();

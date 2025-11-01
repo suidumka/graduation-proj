@@ -1,4 +1,4 @@
-@T1
+@smoke
 Feature: As a data consumer, I want the department information stored in postgress DB correctly in department table.
 
   Background:

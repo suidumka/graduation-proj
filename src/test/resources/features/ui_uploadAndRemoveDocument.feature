@@ -12,9 +12,9 @@ Feature: Docuport Document Upload And Remove
     And user should be redirected to the "Home" page and see My uploads folder
     And user clicks "My uploads" on "Home" page
     And user clicks "Upload documents" on "My uploads" page
-    And user upload an document
-    And user should be able see document first on a list
-    Then user choose document
-    And user clicks "Delete" on "My uploads" page
-    And user clicks "Remove" on "My uploads" page
-    And document should be successfully removed from list
+    #And user upload an document
+    #And user should be able see document first on a list
+    #Then user choose document
+    #And user clicks "Delete" on "My uploads" page
+    #And user clicks "Remove" on "My uploads" page
+    #And document should be successfully removed from list

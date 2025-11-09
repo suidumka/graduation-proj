@@ -16,7 +16,8 @@ import org.junit.runner.RunWith;
                 // "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
         monochrome = true,
-        publish = false
+        publish = false,
+        tags = "@smoke"
 )
 public class CukesRunner {
 }

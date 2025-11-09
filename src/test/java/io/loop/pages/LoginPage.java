@@ -26,7 +26,7 @@ public class LoginPage extends Base {
     @FindBy (xpath="//button[@class='text-none body-2 font-weight-medium v-btn v-btn--has-bg theme--light v-size--default success']")
     public WebElement continueButton;
 
-    @FindBy (xpath = "//*[text()=' Login ']")
+    @FindBy (xpath = "//h1[.=' Login ']")
     public WebElement loginTextBox;
 
     @FindBy (xpath = "//img[@src='/img/logo.d7557277.svg']")
@@ -71,7 +71,7 @@ public class LoginPage extends Base {
                 try {
                     BrowsersUtils.waitForClickable(continueButton, DocuportConstants.LARGE).click();
                 } catch (StaleElementReferenceException e){
-                    WebElement element = Driver.getDriver().findElement(By.xpath("//span[.=' Continue ']"));
+                    WebElement element = Driver.getDriver().findElement(By.xpath("//button[@class='text-none body-2 font-weight-medium v-btn v-btn--has-bg theme--light v-size--default success']"));
                     BrowsersUtils.waitForClickable(element, DocuportConstants.LARGE).click();
                 }
             }

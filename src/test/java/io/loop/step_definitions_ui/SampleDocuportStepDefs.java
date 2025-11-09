@@ -32,9 +32,10 @@ public class SampleDocuportStepDefs {
         switch (page.trim().toLowerCase()) {
 
             case "login" , "choose account" -> {
+                 Thread.sleep(1000);
                 pages.getLoginPage().clickButton(button);
                 LOG.info(button + " was successfully clicked");
-                // Thread.sleep(1000);
+
             }
 
             case "leads" ->{

@@ -1,10 +1,9 @@
 @smoke
 Feature: Practice soft assertions
-
-  @soft @ui
+  @ui
   Scenario: Soft assertions practise
     Given user is on Docuport login page
-    Then user validates "Login" text as displayed
+    Then user validates " Login " text as displayed
     Then user validates "Docuport" text as displayed
     When user inserts "b1g1_client@gmail.com" to "username" field on "Login" page
     And user inserts "Group1" to "password" field on "Login" page

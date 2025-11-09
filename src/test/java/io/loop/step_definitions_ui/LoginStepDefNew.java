@@ -38,10 +38,10 @@ public class LoginStepDefNew {
     }
 
     @Then("user should be able to see home page for {string}")
-    public void user_should_be_able_to_see_home_page_for(String role) {
+    public void user_should_be_able_to_see_home_page_for(String role) throws InterruptedException {
         String header = Driver.getDriver().getTitle();
+        Thread.sleep(1000);
         assertEquals("No match", "Docuport", header);
-
         assertTrue(pages.getDocuportLoginPage().homePageImg.isDisplayed());
     }
 

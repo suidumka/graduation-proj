@@ -70,10 +70,9 @@ public class LeftNavigatePage extends Base {
             }
             case "received doc" -> BrowsersUtils.waitForClickable(receivedDocsButton, DocuportConstants.LARGE).click();
 
-            case "my uploads" -> {
-                Thread.sleep(1000);
+            case "my uploads" ->
                 BrowsersUtils.waitForClickable(myUploads, DocuportConstants.EXTRA_LARGE).click();
-            }
+
 
             case "invitations" ->{
                 try {

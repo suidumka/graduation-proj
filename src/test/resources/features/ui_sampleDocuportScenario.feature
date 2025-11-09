@@ -1,4 +1,3 @@
-@smoke
 Feature: Docuport Sample Scenario
 
   @sampleDocuport @ui
@@ -9,7 +8,7 @@ Feature: Docuport Sample Scenario
     And user clicks "Login" button on "Login" page
     #And user clicks "Continue" button on "Choose account" page
     Then user should be able to see home page for "client"
-   # And user clicks "Invitations" button on "Left Navigate" page
+   And user clicks "Invitations" button on "Left Navigate" page
     And user clicks "My uploads" button on "Left Navigate" page
     And user clicks "Home" button on "Left Navigate" page
     And user clicks "Received Doc" button on "Left Navigate" page

@@ -4,11 +4,11 @@ Feature: Docuport Sample Scenario
   @sampleDocuport @ui
   Scenario: Practice click buttons on different pages as a client
     Given user is on Docuport login page
-    When user inserts "b1g1_client@gmail.com" to "username" field on "Login" page
+    When user inserts "b1g1_advisor@gmail.com" to "username" field on "Login" page
     And user inserts "Group1" to "password" field on "Login" page
     And user clicks "Login" button on "Login" page
-    And user clicks "Continue" button on "Choose account" page
-    #Then user should be able to see home page for "client"
+    #And user clicks "Continue" button on "Choose account" page
+    Then user should be able to see home page for "client"
     And user clicks "Invitations" button on "Left Navigate" page
     And user clicks "My uploads" button on "Left Navigate" page
     And user clicks "Home" button on "Left Navigate" page

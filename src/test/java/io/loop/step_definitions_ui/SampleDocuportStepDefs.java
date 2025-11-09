@@ -3,8 +3,14 @@ package io.loop.step_definitions_ui;
 import io.cucumber.java.en.*;
 import io.loop.pages.POM;
 
+import io.loop.utilities.BrowsersUtils;
+import io.loop.utilities.DocuportConstants;
+import io.loop.utilities.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebElement;
 
 public class SampleDocuportStepDefs {
 
@@ -36,7 +42,14 @@ public class SampleDocuportStepDefs {
                 LOG.info(button + " was successfully clicked");
                 // Thread.sleep(1000);
             }
-
+            case "continue" -> {
+                try {
+                    BrowsersUtils.waitForClickable(pages.getLoginPage().continueButton, DocuportConstants.LARGE).click();
+                } catch (StaleElementReferenceException e) {
+                    WebElement element = Driver.getDriver().findElement(By.xpath("//span[.=' Continue ']"));
+                    BrowsersUtils.waitForClickable(element, DocuportConstants.LARGE).click();
+                }
+            }
             case "leads" ->{
                 pages.getLeftNavigatePage().clickButton(button);
                 LOG.info(button + " was successfully clicked");

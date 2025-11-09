@@ -22,7 +22,7 @@ public class LeftNavigatePage extends Base {
     @FindBy(xpath = "//span[contains(text(),'My uploads')]")
     public WebElement myUploads;
 
-    @FindBy(xpath = "//span[contains(text(),'Invitations')]")
+    @FindBy(xpath = "//a[@href='/invitations']")
     public WebElement invitationsButton;
 
     @FindBy(xpath = "//a[contains(text(),'Terms')]")

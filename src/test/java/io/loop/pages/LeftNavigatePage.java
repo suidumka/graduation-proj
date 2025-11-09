@@ -50,7 +50,7 @@ public class LeftNavigatePage extends Base {
             }
 
             case "users" ->{
-                BrowsersUtils.waitForClickable(usersModule, DocuportConstants.LARGE);
+              //  BrowsersUtils.waitForClickable(usersModule, DocuportConstants.LARGE);
                 BrowsersUtils.clickWithJS(usersModule);
             }
 
@@ -65,7 +65,7 @@ public class LeftNavigatePage extends Base {
 
            //case "home" -> BrowsersUtils.waitForClickable(homeButton, DocuportConstants.LARGE).click();
             case "home" ->{
-                BrowsersUtils.waitForClickable(homeButton, DocuportConstants.LARGE);
+               // BrowsersUtils.waitForClickable(homeButton, DocuportConstants.LARGE);
                 BrowsersUtils.clickWithJS(homeButton);
             }
             case "received doc" -> BrowsersUtils.waitForClickable(receivedDocsButton, DocuportConstants.LARGE).click();
@@ -79,7 +79,7 @@ public class LeftNavigatePage extends Base {
 
                 }
                 catch (StaleElementReferenceException se){
-                    BrowsersUtils.waitForClickable(invitationsButton, DocuportConstants.LARGE).click();
+                   // BrowsersUtils.waitForClickable(invitationsButton, DocuportConstants.LARGE).click();
                     BrowsersUtils.clickWithJS(invitationsButton);
                 }
             }

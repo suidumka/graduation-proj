@@ -37,7 +37,7 @@ public class LeftNavigatePage extends Base {
 
 
 
-    public void clickButton(String button) {
+    public void clickButton(String button) throws InterruptedException {
         switch (button.toLowerCase().trim()) {
 
             case "leads" -> {
@@ -70,7 +70,10 @@ public class LeftNavigatePage extends Base {
             }
             case "received doc" -> BrowsersUtils.waitForClickable(receivedDocsButton, DocuportConstants.LARGE).click();
 
-            case "my uploads" -> BrowsersUtils.waitForClickable(myUploads, DocuportConstants.EXTRA_LARGE).click();
+            case "my uploads" -> {
+                Thread.sleep(1000);
+                BrowsersUtils.waitForClickable(myUploads, DocuportConstants.EXTRA_LARGE).click();
+            }
 
             case "invitations" ->{
                 try {

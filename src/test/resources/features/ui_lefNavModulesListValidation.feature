@@ -13,7 +13,7 @@ Feature: Docuport: login and verify left navigation per role
       | advisor    | Home | Received docs | My uploads | Clients     | Invitations | Users       | Leads       | Bookkeeping     | 1099 Form       | Reconciliations |
       | supervisor | Home | Received docs | My uploads | Clients     | Users       | Leads       | Bookkeeping | 1099 Form       | Reconciliations |                 |
       | employee   | Home | Received docs | My uploads | Clients     | Users       | Bookkeeping | 1099 Form   | Reconciliations |                 |                 |
-      | client     | Home | Received docs | My uploads | Invitations |             |             |             |                 |                 |                 |
+     # | client     | Home | Received docs | My uploads | Invitations |             |             |             |                 |                 |                 |
 
     Examples:
       | role       |

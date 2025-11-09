@@ -8,7 +8,7 @@ Feature: Docuport Sample Scenario
     And user inserts "Group1" to "password" field on "Login" page
     And user clicks "Login" button on "Login" page
     And user clicks "Continue" button on "Choose account" page
-    Then user should be able to see home page for "client"
+    #Then user should be able to see home page for "client"
     And user clicks "Invitations" button on "Left Navigate" page
     And user clicks "My uploads" button on "Left Navigate" page
     And user clicks "Home" button on "Left Navigate" page

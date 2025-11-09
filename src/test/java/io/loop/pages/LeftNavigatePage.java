@@ -74,8 +74,9 @@ public class LeftNavigatePage extends Base {
 
             case "invitations" ->{
                 try {
-                    BrowsersUtils.waitForClickable(invitationsButton, DocuportConstants.LARGE).click();
-                    BrowsersUtils.clickWithJS(invitationsButton);
+                    BrowsersUtils.waitForClickable(invitationsButton, DocuportConstants.EXTRA_LARGE).click();
+                   // BrowsersUtils.clickWithJS(invitationsButton);
+
                 }
                 catch (StaleElementReferenceException se){
                     BrowsersUtils.waitForClickable(invitationsButton, DocuportConstants.LARGE).click();

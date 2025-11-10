@@ -117,7 +117,7 @@ public class BrowsersUtils {
      */
     public static void clickWithJS(WebElement element){
         try {
-            new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(DocuportConstants.LARGE));
+            new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(DocuportConstants.EXTRA_LARGE));
             ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
             ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
            // System.out.println("clicked tom"); -- i put this print in try and catch to see which block handled my issue
